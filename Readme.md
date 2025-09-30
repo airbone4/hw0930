@@ -9,6 +9,8 @@
   - `nothing to commit` 代表三個區同步
 
 - git add 檔案名稱 或 `git add .`
+  
+  建議只用 `git add .` 一點代表是所有新增、刪除、修改的任意檔案
 
 - git commit -m "更改訊息,提示程式員"
 
