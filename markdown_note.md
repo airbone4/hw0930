@@ -1,6 +1,8 @@
 # 9/30上課筆記
 
-github 改這裡
+本地修改
+
+
 
 [本課程主網頁](https://rmilab.nkust.edu.tw)
 
