@@ -54,6 +54,6 @@ print("world")
 ```javascript
 console.log("hello")
 ```
-
+![](git-reset.png)
 
 

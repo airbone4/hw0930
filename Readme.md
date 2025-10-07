@@ -23,3 +23,14 @@ github 修改
 - `git checkout v1` 切換版本v1
 - `git checkout main` 切換到主版本main
 
+
+### 問題
+1. 都是子目錄為甚麼有時候是一般folder有時候又稱為repo ?
+  hint: 隱藏檔案
+
+1. 問題:我的虛擬機上沒有我要的檔案,怎樣上傳?
+
+### 練習
+1. 多人專案,發生衝突的解決
+1. 複製別人的repo 練習殼層指令
+1. 利用ai 整理Readme.md
