@@ -1,5 +1,5 @@
 本repo用來熟悉git(一種版本控制軟體) 操作
-
+github 修改
 - `git status`
 
   - 紅字代表他在工作區(work),還沒進追蹤區(staging) 也未受追蹤(untrcking)
