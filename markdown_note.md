@@ -1,5 +1,7 @@
 # 9/30上課筆記
-xxxxx
+
+github 改這裡
+
 [本課程主網頁](https://rmilab.nkust.edu.tw)
 
 [python](#python-筆記)
