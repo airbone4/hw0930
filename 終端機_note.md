@@ -11,6 +11,7 @@
 - `mkdir 新資料夾名稱`   (make directory的縮寫)建立新資料夾
 - `rm` (remove directory的縮寫)刪除檔案 
   - `rm -r 資料夾` 即使資料夾中有子資料夾也刪除
+  - `rm -rf 資料夾` 多了一個f 表示不要詢問是否要刪除,而是強迫刪除
 
 註解:
 上面的指令是linux指令,但是如果要在windows上也能利用這些linux 指令,可以使用 `bash`殼層(一般是在安裝玩git以後才有)
