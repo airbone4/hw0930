@@ -1,5 +1,5 @@
 # 9/30上課筆記
-本地端
+github 修改
 [本課程主網頁](https://rmilab.nkust.edu.tw)
 
 [python](#python-筆記)
