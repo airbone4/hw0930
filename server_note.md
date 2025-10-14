@@ -47,3 +47,54 @@ pip install flask
 ```python
 python server.py
 ```
+
+作業
+1. 利用python幫我寫一個網頁可以讓使用者選取主機端mp3 並且播放
+```
+from flask import Flask, render_template_string, send_from_directory
+import os
+
+app = Flask(__name__)
+
+# MP3 檔案所在資料夾
+MP3_FOLDER = 'mp3_files'
+
+@app.route('/')
+def index():
+    # 取得 mp3 檔案清單
+    files = [f for f in os.listdir(MP3_FOLDER) if f.endswith('.mp3')]
+    # HTML 模板
+    html = '''
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>MP3 播放器</title>
+    </head>
+    <body>
+        <h1>選擇 MP3 播放</h1>
+        <ul>
+        {% for file in files %}
+            <li>
+                {{ file }}
+                <audio controls>
+                    <source src="/mp3/{{ file }}" type="audio/mpeg">
+                    您的瀏覽器不支援 audio 標籤。
+                </audio>
+            </li>
+        {% endfor %}
+        </ul>
+    </body>
+    </html>
+    '''
+    return render_template_string(html, files=files)
+
+@app.route('/mp3/<filename>')
+def mp3(filename):
+    # 傳送 mp3 檔案
+    return send_from_directory(MP3_FOLDER, filename)
+
+if __name__ == '__main__':
+    # 確保 mp3 資料夾存在
+    os.makedirs(MP3_FOLDER, exist_ok=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+```    
