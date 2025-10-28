@@ -3,56 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>10/21 上課日誌</title>
+  <title>index.md</title>
   <style>
     body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;margin:2rem auto;max-width:900px;padding:1rem;color:#222}
     pre{background:#f7f7f7;padding:1rem;border-radius:6px;overflow:auto}
     code{background:#f0f0f0;padding:.1rem .3rem;border-radius:4px}
+    hr{border:none;border-top:1px solid #eee;margin:2rem 0}
   </style>
 </head>
 <body>
-  <h1>10/21 上課日誌</h1>
-
-  <h2>範例程式</h2>
-  <pre><code class="language-python">from flask import Flask #flask 是程式庫 open source
-
-app = Flask(__name__)
-
-@app.route('/')
-def hello():
-    return 'Hello, World!'
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-</code></pre>
-
-  <p>打開上次留下來的虛擬機，發現不同步。執行指令：</p>
-  <pre><code>git pull</code></pre>
-
-  <h3>複習</h3>
-  <p>如果在虛擬機中修改檔案，則要推到 GitHub 上的 repo，指令是：</p>
-  <pre><code>git add .
-git commit -m "update"
-git push</code></pre>
-
-  <p>AI 超過額度，跑到另一個帳號。執行 <code>python server.py</code> 發生錯誤，看訊息知道少了程式庫 flask：</p>
-  <pre><code>pip install flask</code></pre>
-
-  <p>跟 AI 講：</p>
-  <pre><code>在server.py中新增一個entry 可以指向static目錄中的檔案index.html</code></pre>
-  <p>然後執行：</p>
-  <pre><code>python server.py</code></pre>
-  <p>在瀏覽器打開，發生錯誤，因為還沒建立 <code>static/index.html</code></p>
-
-  <p>又跟 AI 說要幫忙產生範例 <code>index.html</code>，完成。</p>
-
-  <hr />
-
-  <p>備註：剛剛 AI 幫我產生的 index.html 我不要，當時只是要完成目錄結構：</p>
-  <pre><code>/server.py
-|
-|+---static
-       +
-       ------ index.html</code></pre>
+<p><a href="./git_note.html">git note</a></p>
 </body>
 </html>

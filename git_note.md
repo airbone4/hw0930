@@ -25,3 +25,17 @@ github 修改
 - `git checkout v1` 切換版本v1
 - `git checkout main` 切換到主版本main
 
+
+有時候某些檔案或資料夾不要上傳
+
+這個時候需要`.gitignore`
+
+利用AI找範例`example .gitignore for python project`
+
+情境1. 還沒有第一次上傳,
+情境2. 已經上傳， 這時候會發現不起作用
+```
+git rm -rf --cache .
+git add .
+git commit -m ....
+```
