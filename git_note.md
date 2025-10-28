@@ -39,3 +39,5 @@ git rm -rf --cache .
 git add .
 git commit -m ....
 ```
+
+![](img/git-workflow.jpeg)
