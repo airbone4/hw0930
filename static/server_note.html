@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>如何建立自己的web server</title>
+  <style>
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;margin:2rem auto;max-width:900px;padding:1rem;color:#222}
+    pre{background:#f7f7f7;padding:1rem;border-radius:6px;overflow:auto}
+    code{background:#f0f0f0;padding:.1rem .3rem;border-radius:4px}
+    hr{border:none;border-top:1px solid #eee;margin:2rem 0}
+  </style>
+</head>
+<body>
+<ul>
+<li><a href="https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask">存取某個子目錄裡面的html</a>
+<a href=""></a></li>
+<li><a href="https://sdwh.dev/posts/2023/03/HTTP-Protocol-Guide/">簡單講一下html協定</a></li>
+</ul>
+<h2 id="web-server">如何建立自己的web server</h2>
+<p>利用的語言是python</p>
+<p>為甚麼是python而不是javascript 因為javascript 受限於security無法存取本地端的硬碟檔案。</p>
+<ul>
+<li>
+<p>使用AI寫的程式碼,一樣的敘述,出現不一樣的server.py 裡面用的套件(程式碼 英文module or library)不一樣
+  最後必須再指定使用甚麼套件。才產生一樣的程式碼。 </p>
+</li>
+<li>
+<p>我給AI的命令是💖<code>利用python 和flask 寫一個server</code></p>
+</li>
+<li>python server.py</li>
+</ul>
+<p>出現錯誤訊息 ModuleNotFoundError: No module named 'flask'
+  解決方法: pip install flask</p>
+<p>安裝的時候,vscode 建議我不要安裝全局的套件
+所以我現在要來建立一個虛擬環境
+終端機裡面敲入</p>
+<pre><code>python -m venv .venv # 其中.venv 是使用者指定的本地端套件安裝根目錄
+</code></pre>
+<p>問AI怎樣建立虛擬環境 💖<code>幫我建立一個python的虛擬環境</code>按照AI回答的說明
+1. 執行 Python: Create Environment 指令，依照畫面指示選擇 venv。
+1. 選擇要作為虛擬環境基礎的 Python 直譯器。
+1. 建立完成後，建議再執行 Python: Select Interpreter 指令，</p>
+<p>但是他沒有提示關掉目前的終端機,再重新開一個終端機.
+這時候提示符號變成</p>
+<pre><code>(.venv) @airbone4  #注意前面的括號,表示目前我們在虛擬環境
+</code></pre>
+<p>詢問AI說怎麼安裝flask 💖<code>幫我安裝flask套件</code> 出現指令</p>
+<pre><code>pip install flask
+</code></pre>
+<p>解釋<code>http://127.0.0.1:5000</code>
+- http 指的是 我要在本地端(127.0.0.1)的port 5000使用http 協定</p>
+<p>在終端機上敲入指令</p>
+<pre><code class="language-python">python server.py
+</code></pre>
+<p>作業
+1. 利用python幫我寫一個網頁可以讓使用者選取主機端mp3 並且播放</p>
+<pre><code>from flask import Flask, render_template_string, send_from_directory
+import os
+
+app = Flask(__name__)
+
+# MP3 檔案所在資料夾
+MP3_FOLDER = 'mp3_files'
+
+@app.route('/')
+def index():
+    # 取得 mp3 檔案清單
+    files = [f for f in os.listdir(MP3_FOLDER) if f.endswith('.mp3')]
+    # HTML 模板
+    html = '''
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;MP3 播放器&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;選擇 MP3 播放&lt;/h1&gt;
+        &lt;ul&gt;
+        {% for file in files %}
+            &lt;li&gt;
+                {{ file }}
+                &lt;audio controls&gt;
+                    &lt;source src=&quot;/mp3/{{ file }}&quot; type=&quot;audio/mpeg&quot;&gt;
+                    您的瀏覽器不支援 audio 標籤。
+                &lt;/audio&gt;
+            &lt;/li&gt;
+        {% endfor %}
+        &lt;/ul&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    '''
+    return render_template_string(html, files=files)
+
+@app.route('/mp3/&lt;filename&gt;')
+def mp3(filename):
+    # 傳送 mp3 檔案
+    return send_from_directory(MP3_FOLDER, filename)
+
+if __name__ == '__main__':
+    # 確保 mp3 資料夾存在
+    os.makedirs(MP3_FOLDER, exist_ok=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+</code></pre>
+</body>
+</html>
