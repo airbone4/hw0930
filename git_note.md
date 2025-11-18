@@ -38,6 +38,7 @@ github 修改
 git rm -rf --cache .
 git add .
 git commit -m ....
+git push
 ```
 
 ![](img/git-workflow.jpeg)
