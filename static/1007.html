@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>1007</title>
+</head>
+<body>
+<h3>問題</h3>
+<ol>
+<li>
+<p>都是子目錄為甚麼有時候是一般folder有時候又稱為repo ?
+    hint: </p>
+<ul>
+<li>隱藏檔案  check</li>
+<li>在一般的子目錄下GIT指令會怎樣 check</li>
+<li>答案:差別在隱藏目錄<code>.git</code></li>
+</ul>
+</li>
+<li>
+<p>問題:我的虛擬機上沒有我要的檔案,怎樣上傳? check</p>
+</li>
+</ol>
+<h3>練習</h3>
+<ol>
+<li>多人專案,發生衝突的解決 (not yet💖)</li>
+<li>複製別人的repo 順便練習殼層指令</li>
+<li>先在github上建立自己的repo 例如 u777</li>
+<li>進入codespaces</li>
+<li>在終端機中<code>cd ..</code></li>
+<li><code>git clone https://github.com/airbone4/hw0930.git</code><ul>
+<li>此時,有兩個子目錄,一個是<code>u777</code>一個是<code>hw0930</code></li>
+</ul>
+</li>
+<li><code>cd hw0930</code></li>
+<li><code>rm -rf .git</code> 刪除.git這個子目錄</li>
+<li><code>cd ..</code></li>
+<li><code>cp hw0930/* u777</code> 
+    此時已完整複製所有對方的檔案到自己的工作區</li>
+<li><code>git add .</code></li>
+<li><code>git commit -m "任何訊息"</code></li>
+<li>
+<p><code>git push</code>   </p>
+</li>
+<li>
+<p>利用ai 整理Readme.md</p>
+</li>
+</ol>
+</body>
+</html>

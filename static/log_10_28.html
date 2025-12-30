@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!doctype html>
 <html lang="zh-Hant">
 <head>
@@ -78,3 +79,78 @@
    ```    </p>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>log_10_28</title>
+</head>
+<body>
+<p>目的: 將所有的md 檔案 翻譯成html</p>
+<p>bash to visit each file in folder</p>
+<p>為甚麼翻譯成html 因為伺服器回答使用者的URL的時候,回傳的就是html格式</p>
+<h2>html note</h2>
+<p>hyper text markup language (簡稱HTML) 這是一個電腦語言,但不是程式語言。和markdown 一樣,也是電腦語言,不是程式語言。因為都沒有迴圈(loop)</p>
+<p>有配對標籤 和單標籤</p>
+<ul>
+<li>配對標籤 <code>&lt;標籤名稱&gt; ddfdfdf dfdfd &lt;/標籤名稱&gt;</code></li>
+<li>單標籤  ,比如說 <code>&lt;br&gt;</code> <code>&lt;br/&gt;</code></li>
+</ul>
+<p>大綱</p>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  通常放別人的程式庫 或是 放 css
+&lt;/head&gt;
+&lt;body&gt;
+這裡才是我們寫文章的地方
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>超連結
+<code>&lt;a href="我的URL"&gt;學校&lt;/a&gt;</code></li>
+<li>
+<p>段落 <code>&lt;p&gt;這裡寫段落 &lt;/p&gt;</code></p>
+<p>上面兩個,簡稱一個a 一個  p 。a標籤屬於不換行,p換行。</p>
+</li>
+</ul>
+<p>圖形</p>
+<ul>
+<li>圖形標籤<code>&lt;img src="我的URL" width="500" height="600"&gt;</code></li>
+</ul>
+<p>img 標籤中的src (對照一下a標籤中的href) 和 weight, height 都是叫做tag 的屬性</p>
+<p>attribute(屬性) 通常是<code>key="value"</code></p>
+<ul>
+<li>標題tag </li>
+<li><code>&lt;h1&gt;&lt;/h1&gt;</code>   標題1</li>
+<li>
+<p><code>&lt;h2&gt;&lt;/h2&gt;</code>   標題2 </p>
+</li>
+<li>
+<p>程式碼的標籤  <code>&lt;script&gt; console.log("hello")&lt;/script&gt;</code> </p>
+</li>
+</ul>
+<p>其中的<code>console.log("hello")</code> 是javascript</p>
+<p>如果要使用其他語言,必須使用屬性<code>type</code> ,例如: 
+  ```js
+<br />
+<script type="typescript">寫typescript的程式碼</script></p>
+<p><code>- `&lt;ul&gt;&lt;/ul&gt;`無號碼清單(unordered list)</code>html
+    <ul>
+     <li> </li>
+     <li> </li>
+    </ur>
+    <code>- 有號清單</code>html
+        <ol>
+        <li>清單項目 </li>
+        <li>清單項目
+        &lt;/ol
+    <code>- &lt;code&gt;&lt;/code&gt;  不換行 但是用等寬的字型顯示。
+- 上面的code 通常會和 pre標籤配合,如下:</code>html
+    <pre><code></code></pre> 
+   ```    </p>
+</body>
+</html>
+>>>>>>> Stashed changes

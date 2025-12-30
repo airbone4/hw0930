@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>css_drop_down</title>
+</head>
+<body>
+<pre><code class="language-html">  &lt;script&gt;
+    function toggle() {
+      mymenu.classList.toggle('hidden')
+      mymenu.classList.toggle('flex')
+    }
+  &lt;/script&gt;
+  &lt;style&gt;
+    .menu {
+      position: relative
+    }
+
+    .hidden {
+      display: none
+    }
+    .flex{
+      display:flex;
+    }
+    .menu-content {
+      position:absolute;
+      z-index: 1;
+    }
+  &lt;/style&gt;
+
+
+  &lt;nav display:flex&gt;
+    &lt;button&gt; xx&lt;/button&gt;
+
+    &lt;div class=&quot;menu&quot;&gt;
+      &lt;button onclick=&quot;toggle()&quot;&gt;yy&lt;/button&gt;
+      &lt;div  id=&quot;mymenu&quot; class=&quot;menu-content hidden &quot;&gt;
+        &lt;button&gt;item1&lt;/button&gt;
+        &lt;button&gt;item2&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+
+  &lt;div&gt;
+</code></pre>
+<p><a href="" title="https://www.w3schools.com/howto/howto_css_dropdown.asp">ref</a></p>
+</body>
+</html>

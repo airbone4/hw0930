@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>log_11_18</title>
+</head>
+<body>
+<p>javascript的字串表示方式有三種
+1. '
+1. "
+1. `</p>
+<p>其中反頓號,讓我們直接可以把變數以${變數}的方式代換。
+例如</p>
+<pre><code class="language-js">let a=&quot;你好&quot;
+let b=`目前變數a的內容是${a}`
+console.log(b)
+
+</code></pre>
+<p>出現的結果是</p>
+<pre><code>目前變數a的內容是你好
+</code></pre>
+<pre><code class="language-js">let a=&quot;你好&quot;
+let b=`目前變數a的內容是${a}`
+console.log(b)
+a=&quot;天氣好&quot;
+b=`目前變數a的內容是${a}`
+console.log(b)
+
+</code></pre>
+<p>出現的結果是</p>
+<pre><code>目前變數a的內容是你好
+目前變數a的內容是天氣好
+</code></pre>
+<pre><code class="language-js">let a=5
+let b=3
+let c=a
+c=a+b
+console.log(c)
+</code></pre>
+<p>最後的結果就是</p>
+<pre><code>8
+</code></pre>
+<pre><code class="language-js">let a=5
+let b=3
+let c=a
+c=a+b
+console.log(`a的內容是${a}, b的內容是${b} , c 是a+b的結果,內容是 ${c}`)
+</code></pre>
+<p>最後的結果就是</p>
+<pre><code>8
+</code></pre>
+<ul>
+<li>數字可以做加減乘除</li>
+<li>但是不能像一般的程式語言有平方的寫法 ,寫法是 <code>Math.pow(a,b)</code> 等於是excel 中 a^b</li>
+</ul>
+<p>宣告變數的方法有let ,var ,const</p>
+<ul>
+<li>const 指定的變數值無法修改</li>
+<li>let,var 看起來都一樣 但是let 是新標準的寫法,比較不會出問題</li>
+<li>c=4  === var c=4 這時候c是一個數字變數,c的型態(type) 就是數字</li>
+<li>c='abc' === var c='abc' 這時候c 的型態是字串。</li>
+<li>型態還有邏輯值
+  <code>true</code>,<code>false</code> true 是非0,false 是 0  邏輯運算子(operator)有 and (&amp;) or (|) 還有<code>非</code> <code>等不等於</code></li>
+</ul>
+</body>
+</html>

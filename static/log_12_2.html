@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>log_12_2</title>
+</head>
+<body>
+<p>迴圈,每個陣列裡面的元素,都要處理,這裡的範例 用<code>console.log()</code></p>
+<pre><code class="language-js">
+        const arr = [&quot;JavaScript&quot;, &quot;Python&quot;, &quot;C&quot;, &quot;C++&quot;, &quot;HTML&quot;, &quot;CSS&quot;];
+        for ( ele of arr) {
+            console.log( ele);
+        }
+</code></pre>
+<pre><code class="language-js">
+let x=3;
+function sayHello(msg) {
+    let y=4;
+    alert(msg+'x: '+x+'y: '+y);
+}        
+
+
+</code></pre>
+<ul>
+<li>變數x 是global variable (總體變數,全局變數)</li>
+<li>變數y 是local varialbe (局部變數) </li>
+<li>局部變數的第一個特徵是,外面有block ,例如<code>｛</code>和<code>｝</code>之間</li>
+<li>存取關係:外面拿不到裡面(local variable),裡面可以拿到外面(global variable)  </li>
+</ul>
+<pre><code class="language-js">    &lt;p id=&quot;output&quot;&gt; &lt;/p&gt;
+    &lt;script&gt;
+
+        let x=3;  //global variable x
+
+        function sayHello(msg) {
+            let x=4;  //local variable
+            let y=5;  // local variable
+            let output= document.getElementById('output');  
+            //document 是 global variable
+            // output 是local variable
+
+            output.innerHTML = msg+'x: '+x+'y: '+y;
+
+        }        
+
+        sayHello('hello ')
+
+    &lt;/script&gt;
+    &lt;script&gt;
+     console.log(x)  //這裡拿到的是global variable
+    &lt;/script&gt;
+</code></pre>
+<h2>var 宣告 let 宣告 哪裡不一樣</h2>
+<p>let 的生命範圍是block ,但是var 的生命範圍 不是block 而是函數block</p>
+<p>看下面的程式碼註解</p>
+<pre><code class="language-js">        // var y=5;  //註解1:
+        {// 這是block 但不是函數block
+        let x=3;
+        var y=5;  //在這裡宣告,等於在註解1宣告。因為var 宣告的y ,其生命期只受函數block 影響
+        }
+
+        console.log(y)
+        console.log(x)
+
+        //函數sayHello的定義
+        function sayHello(msg) 
+        { //這是函數block
+            let x=4;  //函數結束,x消失 (結束生命期)
+            var y=5; //和x一樣 也是,函數消失就結束。因為 var 宣告的變數,受函數block影響。
+            let output= document.getElementById('output');
+            output.innerHTML = msg+'x: '+x+'y: '+y;
+        }        
+
+        sayHello('hello ') //調用函數sayHello
+</code></pre>
+<p>加總函數</p>
+<pre><code class="language-js">function sum(x,y){
+    return x+y
+}
+let y=sum(5,6)
+</code></pre>
+<p>範例</p>
+<pre><code class="language-js">function xxx() {
+    return &quot;你好&quot; 
+}
+</code></pre>
+<p>函數的另一種寫法(對照上面):</p>
+<pre><code>const xxx=()=&gt;{
+    return &quot;你好&quot; 
+}
+</code></pre>
+<p>我們公司統一規定,冪次方的函數定義為power(x,y)</p>
+<pre><code class="language-js">function power (x,y) {
+    return Math.pow(x,y)
+}
+
+console.log(power(5,3)) //主控台出現125 excel 中的寫法是:5^3
+
+</code></pre>
+</body>
+</html>

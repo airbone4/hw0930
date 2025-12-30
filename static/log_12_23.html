@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>log_12_23</title>
+</head>
+<body>
+<p>python tutorialpoint</p>
+<ul>
+<li>function: input(), print()</li>
+<li><a href="https://www.tutorialspoint.com/python/python_variables.htm">variable</a></li>
+<li><a href="https://www.tutorialspoint.com/python/python_type_casting.htm">type casting</a></li>
+<li>flow control : if else, while, for</li>
+</ul>
+<pre><code>import ollama
+
+# 設定模型名稱（請確保已執行過 ollama pull llama3）
+model_name =  'llama3.2:1b'  
+
+def chat_simple():
+
+
+    #question = '為什麼天空是藍色的？用一句話回答。'
+    question = input('輸入問題:')
+    if question == &quot;exit&quot;:
+        quit()
+    response = ollama.chat(model=model_name, messages=[
+        {
+            'role': 'user',
+            'content': question,
+        },
+    ])
+    print(response['message']['content'])
+
+
+if __name__ == &quot;__main__&quot;:
+  while True:  
+    chat_simple()
+
+</code></pre>
+</body>
+</html>

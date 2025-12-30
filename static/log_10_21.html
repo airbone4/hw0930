@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>log_10_21</title>
+</head>
+<body>
+<h2>10/21 上課日誌</h2>
+<pre><code class="language-python">from flask import Flask #flask 是程式庫 open source
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+</code></pre>
+<p>打開上次留下來的虛擬機,發現不同步
+執行指令</p>
+<pre><code>git pull
+</code></pre>
+<p>複習
+如果在虛擬機中修改檔案,則要推到github 上的repo 指令是</p>
+<pre><code>git add .
+git commit -m &quot;update&quot;
+git push
+</code></pre>
+<p>AI超過額度,跑到另一個帳號
+執行<code>python server.py</code>發生錯誤 看訊息知道少了程式庫flask</p>
+<pre><code>pip install flask
+</code></pre>
+<p>💖跟AI講</p>
+<pre><code>在server.py中新增一個entry 可以指向static目錄中的檔案index.html
+</code></pre>
+<p>然後執行</p>
+<pre><code>python server.py
+</code></pre>
+<p>在瀏覽器打開,發生錯誤 因為我還沒建立<code>static/index.html</code></p>
+<p>💖又跟AI說</p>
+<pre><code>幫我寫一個index.html的範例
+</code></pre>
+<p>完成。</p>
+<p>剛剛ai幫我產生的index.html, 我不要.剛剛的目的只是要他完成目錄結構  這個index.html必須放在static子目錄中</p>
+<pre><code>/server.py
+|
+|+---static
+       +
+       ------ index.html
+</code></pre>
+<p>💖跟AI講</p>
+<pre><code>幫我把log_10_21.md翻譯成index.html
+</code></pre>
+</body>
+</html>
