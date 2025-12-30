@@ -56,6 +56,7 @@ def open_with_browser(path):
     except Exception as e:
         print(f"開啟失敗：{e}")
 
+
 def main():
     p = argparse.ArgumentParser(description="把 Markdown 轉成 HTML")
     p.add_argument("markdown", help="來源 Markdown 檔案路徑")

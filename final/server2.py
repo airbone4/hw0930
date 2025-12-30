@@ -3,7 +3,7 @@ import server_tools
 
 staticFolder='./static'
 templateFolder='./templates'
-
+server_tools.generate_index()
 app=Flask(__name__,
             static_url_path='', 
             static_folder=staticFolder,
