@@ -13,13 +13,8 @@ app=Flask(__name__,
             static_folder=staticFolder,
             template_folder=templateFolder)
 
-<<<<<<< Updated upstream
 
 
-=======
-tool.convert_md_to_html()
-tool.generate_index()
->>>>>>> Stashed changes
 @app.route('/')
 def hello():
     #return render_template('index.html')
